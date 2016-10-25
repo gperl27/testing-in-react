@@ -4,16 +4,14 @@ import App from '../../src/components/app';
 //use 'describe' to group together similar tests
 //Grider likes giving solely the component's name
 describe('App', () => {
-  //use 'it' to test a single attribute of a target
-  it('shows the correct text', () => {
+  let component;
 
-    //create an instance of App
-    const component = renderComponent(App);
-
-    //use 'expect' to make an 'assertion' about a target
-    expect(component).to.contain('React simple starter');
-
-
+  beforeEach(()=>{
+    component = renderComponent(App);
+  })
+  //useful bc show a linkage between 2 components
+  it('shows a comment box' , () => {
+    expect(component.find(".comment-box")).to.exist;
   });
 
 
